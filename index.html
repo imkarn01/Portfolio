@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Karan Rajput | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #232526 0%, #414345 100%);
+      color: #fff;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .navbar {
+      background: #181818e6 !important;
+      box-shadow: 0 2px 16px #00ffe733;
+    }
+    .navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
+      color: #00ffe7 !important;
+      text-shadow: 0 0 8px #00ffe7;
+    }
+    .hero-img {
+      width: 220px; height: 300px; object-fit: cover; border-radius: 24px;
+      box-shadow: 0 0 60px #00ffe7cc, 0 0 10px #000;
+      animation: floatPhoto 3s ease-in-out infinite alternate, photoGlow 2.5s infinite alternate;
+    }
+    @keyframes floatPhoto {
+      0% { transform: translateY(0);}
+      100% { transform: translateY(-16px);}
+    }
+    @keyframes photoGlow {
+      0% { box-shadow: 0 0 60px #00ffe7cc, 0 0 10px #000;}
+      100% { box-shadow: 0 0 100px #00ffe7, 0 0 20px #00ffe7;}
+    }
+    .career-objective {
+      background: rgba(0,255,231,0.08);
+      border-left: 4px solid #00ffe7;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      box-shadow: 0 0 16px #00ffe733;
+    }
+    .career-title {
+      color: #00ffe7;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .typewriter-cursor {
+      display: inline-block;
+      width: 1ch;
+      color: #00ffe7;
+      animation: blink-caret 0.7s steps(1) infinite;
+    }
+    @keyframes blink-caret {
+      0%,100% { opacity: 1;}
+      50% { opacity: 0;}
+    }
+    .about-intro {
+      background: rgba(0,255,231,0.06);
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2rem;
+      color: #fff;
+      font-size: 1.08rem;
+      box-shadow: 0 0 12px #00ffe733;
+      text-align: center;
+    }
+    .timeline-dot {
+      width: 14px; height: 14px; background: #00ffe7;
+      border-radius: 50%; box-shadow: 0 0 8px #00ffe7aa;
+      display: inline-block; margin-right: 10px;
+    }
+    .project-card {
+      background: #181818cc;
+      border-radius: 18px;
+      box-shadow: 0 0 16px #00ffe733;
+      padding: 1.5rem 1rem;
+      min-width: 220px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 2rem;
+    }
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 0 32px #00ffe7aa;
+    }
+    .project-title {
+      color: #00ffe7;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+    .project-tech {
+      font-size: 0.95rem;
+      color: #00ffe7cc;
+      margin-bottom: 0.5rem;
+    }
+    .exp-logo {
+      width: 56px; height: 56px; border-radius: 16px; background: #00ffe7;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 12px #00ffe7aa;
+      flex-shrink: 0;
+      margin-right: 1rem;
+    }
+    .exp-logo img { width: 40px; height: 20px; }
+    .skill-card {
+      background: #181818cc; border-radius: 16px; box-shadow: 0 0 8px #00ffe7aa;
+      padding: 1rem 1.5rem; min-width: 160px; max-width: 220px;
+      margin-bottom: 1.2rem;
+    }
+    .contact-form {
+      background: #181818cc; border-radius: 18px; box-shadow: 0 0 32px #00ffe7aa;
+      padding: 2rem 2.5rem; min-width: 280px; max-width: 400px;
+      margin: 0 auto 2rem auto;
+    }
+    .contact-social a img { width: 44px; transition: transform 0.2s, filter 0.2s; }
+    .contact-social a:hover img { transform: scale(1.2); filter: drop-shadow(0 0 8px #00ffe7); }
+    footer {
+      background: #181818e6; color: #00ffe7; text-align: center;
+      padding: 1.2rem 0; font-size: 1rem; letter-spacing: 1px;
+      margin-top: 1rem; box-shadow: 0 -2px 16px #00ffe733;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-img { width: 150px; height: 200px;}
+      .contact-form { padding: 1.2rem;}
+      .about-intro { font-size: 1rem; padding: 0.7rem 0.5rem;}
+    }
+    @media (max-width: 400px) {
+      .project-card { padding: 1rem 0.5rem; min-width: 0; }
+      .contact-form { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">Karan Rajput</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section class="container py-5" id="home" style="margin-top:80px;">
+    <div class="row align-items-center g-4">
+      <div class="col-md-4 text-center">
+        <img src="assets/images/01.jpg" alt="Karan Rajput" class="hero-img mb-3">
+      </div>
+      <div class="col-md-8">
+        <h1 class="fw-bold" style="background: linear-gradient(90deg, #00ffe7 0%, #00bfff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Karan Rajput</h1>
+        <div class="mb-2">
+          <span class="me-3"><strong>Birthdate:</strong> 10 April 2003</span>
+          <span><strong>Location:</strong> Khandwa, Madhya Pradesh</span>
+        </div>
+        <div class="career-objective">
+          <span class="career-title">Career Objective</span>
+          <p>
+            To obtain a challenging position as a <b>React.js Developer</b> where I can utilize my skills to build impactful web applications and grow as a professional.
+          </p>
+        </div>
+        <div class="intro">
+          <span id="typewriter"></span><span class="typewriter-cursor">|</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="container py-5" id="about">
+    <div class="about-intro mb-4">
+      Hi! I'm <b>Karan Rajput</b>, a passionate web developer from Madhya Pradesh. I love building modern, user-friendly web apps and always eager to learn new technologies. When I'm not coding, I enjoy music, cricket, and exploring new tech trends.
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h2 class="text-info mb-3">Education</h2>
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <span class="timeline-dot"></span>
+            <b>B.Tech (CSE), RGPV, Bhopal</b> <br>
+            <span class="text-secondary">2021-2025</span><br>
+            <a class="text-info" href="link-to-btech-marksheet.pdf" target="_blank">View Marksheet</a>
+          </li>
+          <li class="mb-3">
+            <span class="timeline-dot"></span>
+            <b>12th, Govt. Boys Higher Secondary School Mundi</b> <br>
+            <span class="text-secondary">2020-2021 — 90.8%</span><br>
+            <a class="text-info" href="link-to-12th-marksheet.pdf" target="_blank">View Marksheet</a>
+          </li>
+          <li>
+            <span class="timeline-dot"></span>
+            <b>10th, Govt. High School Dudhwas</b> <br>
+            <span class="text-secondary">2018-2019 — 90.6%</span><br>
+            <a class="text-info" href="link-to-10th-marksheet.pdf" target="_blank">View Marksheet</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h2 class="text-info mb-3">Certificates</h2>
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <span class="timeline-dot"></span>
+            <b>MS Office</b><br>
+            <span class="text-secondary">Netlink, Khandwa — 90 hours duration</span>
+          </li>
+          <li class="mb-3">
+            <span class="timeline-dot"></span>
+            <b>Core Java</b><br>
+            <span class="text-secondary">Code Care — 90 hours duration</span>
+          </li>
+          <li>
+            <span class="timeline-dot"></span>
+            <b>MERN Stack</b><br>
+            <span class="text-secondary">6 months duration from CodeBetter, Indore</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="container py-5" id="projects">
+    <h2 class="text-info mb-4">Projects</h2>
+    <div class="row">
+      <div class="col-md-6 col-lg-3">
+        <div class="project-card">
+          <div class="project-title">YouTube Clone</div>
+          <div class="project-tech">React.js, Material UI, RapidAPI</div>
+          <div class="project-desc">
+            A fully responsive YouTube clone with video search, playback, and channel pages. Uses YouTube Data API for real-time content.
+          </div>
+          <a href="https://your-youtube-clone-link.com" target="_blank" class="btn btn-info btn-sm mt-2">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="project-card">
+          <div class="project-title">Netflix Clone</div>
+          <div class="project-tech">React.js, TMDB API, Firebase Auth</div>
+          <div class="project-desc">
+            Netflix-inspired UI with user authentication, trending movies, and personalized watchlist. All data fetched from TMDB API.
+          </div>
+          <a href="https://your-netflix-clone-link.com" target="_blank" class="btn btn-info btn-sm mt-2">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="project-card">
+          <div class="project-title">E-commerce</div>
+          <div class="project-tech">React.js, Redux, Node.js, MongoDB</div>
+          <div class="project-desc">
+            Powerful admin dashboard for managing products, orders, users, and analytics. Includes all controls and real-time updates.
+          </div>
+          <a href="https://imkarn01.github.io/ecommerce/" target="_blank" class="btn btn-info btn-sm mt-2">View Details</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="project-card">
+          <div class="project-title">Contact Manager</div>
+          <div class="project-tech">React.js, Express.js, MongoDB</div>
+          <div class="project-desc">
+            A modern contact management app with CRUD operations, search, and responsive design.
+          </div>
+          <a href="https://your-contact-manager-link.com" target="_blank" class="btn btn-info btn-sm mt-2">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="container py-5" id="experience">
+    <h2 class="text-info mb-4">Experience</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="d-flex align-items-start mb-4">
+          <div class="exp-logo"><img src="assets/logical.png" alt="Company 1"></div>
+          <div>
+            <div class="fw-bold text-info">Web Development Intern</div>
+            <div class="fw-semibold">Logical SoftTech Pvt. Ltd.</div>
+            <div class="text-secondary">May 2025 - Present</div>
+            <div>
+              Built dynamic web apps using React and Node.js.<br>
+              <em>“Transformed ideas into interactive, real-world solutions for clients.”</em>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex align-items-start mb-4">
+          <div class="exp-logo"><img src="assets/codebatter.png" alt="Company 2"></div>
+          <div>
+            <div class="fw-bold text-info">Frontend Intern</div>
+            <div class="fw-semibold">CodeBetter, Indore</div>
+            <div class="text-secondary">JUNE 2024 - NOVEMBER 2024</div>
+            <div>
+              Designed responsive UIs and improved user experience.<br>
+              <em>“Turned complex requirements into beautiful, user-friendly interfaces.”</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="container py-5" id="skills">
+    <h2 class="text-info mb-4">Skills</h2>
+    <div class="row">
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <div class="fw-bold text-info">HTML</div>
+          <div>Semantic, accessible, and SEO-friendly markup for modern web apps.</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <div class="fw-bold text-info">CSS</div>
+          <div>Pixel-perfect layouts, animations, and responsive design expertise.</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <div class="fw-bold text-info">JavaScript</div>
+          <div>Dynamic, interactive web experiences with clean, efficient code.</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <div class="fw-bold text-info">React.js</div>
+          <div>Building fast, scalable SPAs with reusable components.</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <div class="fw-bold text-info">Bootstrap</div>
+          <div>Rapid prototyping and mobile-first design with Bootstrap framework.</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <div class="fw-bold text-info">MongoDB</div>
+          <div>Flexible, scalable NoSQL database solutions for modern apps.</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <div class="fw-bold text-info">Node.js</div>
+          <div>Efficient backend APIs and real-time services with Node.js.</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <div class="fw-bold text-info">Express.js</div>
+          <div>Robust RESTful APIs and server-side logic with Express.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="container py-5" id="contact">
+    <h2 class="text-info mb-3">Contact</h2>
+    <div class="mb-3 text-center">
+      <p>Feel free to reach out for collaboration, freelance work, or just a friendly hello!</p>
+    </div>
+    <form class="contact-form mx-auto" id="whatsappForm">
+      <div class="mb-3">
+        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+      </div>
+      <div class="mb-3">
+        <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+      </div>
+      <div class="mb-3">
+        <textarea id="message" name="message" class="form-control" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-info w-100 fw-bold">Send via WhatsApp</button>
+    </form>
+    <div class="contact-social d-flex justify-content-center gap-4 mt-3">
+      <a href="#" target="_blank" title="GitHub"><img src="assets/reshot-icon-github-NY46M9DGFU.svg" alt="GitHub"></a>
+      <a href="#" target="_blank" title="LinkedIn"><img src="assets/01.svg.svg" alt="LinkedIn"></a>
+      <a href="https://www.instagram.com/anjal_praja?utm_source=ig_web_button_share_sheet&igsh=MTg3ajY3Znkxd2N2cA==" target="_blank" title="Instagram"><img src="assets/reshot-icon-instagram-M2ZK3USTWR.svg" alt="Instagram"></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 Karan Rajput | All rights reserved.
+  </footer>
+
+  <!-- Bootstrap JS (for navbar toggler) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Typewriter & WhatsApp Form -->
+  <script>
+    // Navbar active link on scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    window.onscroll = () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    };
+
+    // Typewriter effect for Home intro (with cursor)
+    const typewriterText = "I build web experiences that look cool and work fast.";
+    let i = 0;
+    function typeWriter() {
+      if (i <= typewriterText.length) {
+        document.getElementById("typewriter").innerHTML = typewriterText.substring(0, i);
+        i++;
+        setTimeout(typeWriter, 35);
+      }
+    }
+    window.onload = typeWriter;
+
+    // WhatsApp Form Submission
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var message = document.getElementById('message').value.trim();
+      var whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+      var whatsappURL = `https://wa.me/916263646018?text=${whatsappMessage}`;
+      window.open(whatsappURL, '_blank');
+    });
+  </script>
+</body>
+</html>
